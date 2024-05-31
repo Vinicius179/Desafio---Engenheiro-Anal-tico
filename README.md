@@ -41,3 +41,21 @@ Essa análise visual no Tableau fornece uma visão abrangente do estado atual e 
   - [População Total](https://data.worldbank.org/indicator/SP.POP.TOTL)
   - [Renda Per Capita](https://data.worldbank.org/indicator/NY.GNP.PCAP.CD)
   - [Taxa de Desemprego](https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS)
+
+### Scripts
+
+  - **format_tables.py**:
+    - Recebe os dados do Banco Mundial
+    - Limpa os dados, ignora as colunas e linhas não relevantes
+    - Transforma as colunas de data em linhas, da nova coluna "Ano"
+    - Transforma as linhas das antigas colunas de data em linhas de uma unica coluna que recebe o nome do arquivo que esta sendo processado, ex: PIB (US$ Corrente)
+    - Exporta para o excel
+      
+  - **merge_tables.py**:
+    - Le todos os arquivos excel gerados pela execução do script format_tables.py
+    - Faz a junção dos arquivos usando a coluna ano como chave
+    - Gera um novo arquivo excel com os dados de todos os arquivos extraídos do Banco Mundial
+
+  - **Resultado**:
+    - Após a execução dos scripts os dados do banco Mundial são limpos e organizados de forma que contenham apenas as informações necessárias para a criação do dashboard.   
+  
